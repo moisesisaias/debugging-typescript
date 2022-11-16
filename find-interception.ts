@@ -16,7 +16,6 @@ function FindIntersection(strArr: string[]) {
   for (var i = 0; i < firstArray.length; i++) {
     let currentNumber: any = parseInt(firstArray[i]);
     for ( ; e < secondArray.length; e++) {
-      console.log(e);
       const secondNumber: any = parseInt(secondArray[e]);
       if (currentNumber === secondNumber) {
         commonNumbers.push(currentNumber);

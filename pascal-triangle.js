@@ -46,18 +46,23 @@ var generatePascalTriangle = function(numRows) {
           }
           else {
               // Calculate the elements of a row, add each pair of adjacent elements of the previous row in each step of the inner loop.
-              triangleAsArrayOfArrays[currentRow][column] = triangleAsArrayOfArrays[currentRow - 1][column - 1] + triangleAsArrayOfArrays[currentRow - 1][column - 1];
+              triangleAsArrayOfArrays[currentRow][column] = 
+                triangleAsArrayOfArrays[currentRow - 1][column - 1] 
+                + triangleAsArrayOfArrays[currentRow - 1][column];
           }
       }
   }
   return triangleAsArrayOfArrays;      // Return the output list of pascal values...
 };
 
-console.log(generatePascalTriangle(5));
+// console.log(generatePascalTriangle(5));
 generatePascalTriangle(4).forEach(element => {
   console.log(element);
 });
 // console.log(generatePascalTriangle(33)[3]);
+
+// an array of arrays is just an array but each item on the array is an array itself.
+
 // 0 1 2 length -1 
 // [1, 2, 3]
 // ['st', 'dt']

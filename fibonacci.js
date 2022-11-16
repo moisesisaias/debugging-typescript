@@ -3,15 +3,15 @@ function Fibonacci(n)
   let previous = 0;
   let current = 1;
   let sum;
-  
-  for (let i = 2; i < n; i++)
+
+  for (let i = 2; i <= n; i++)
   {
     sum = previous + current;
-    previous = previous;
+    previous = current;
     current = sum;
   }
-  
-  return current;
+
+  return n === 0 ? previous : current;
 }
 
 // n0, n1, n2, n3
@@ -25,4 +25,13 @@ Fibonacci(3) = 2 (1 + 1)
 Fibonacci(4) = 3 (1 + 2)
 Fibonacci(5) = 5 (2 + 3)
 */
+
+console.log(Fibonacci(0));
+console.log(Fibonacci(1));
+console.log(Fibonacci(2));
+console.log(Fibonacci(3));
+console.log(Fibonacci(4));
 console.log(Fibonacci(5));
+console.log(Fibonacci(8));
+
+// run this by executing: node fibonacci.js
