@@ -28,18 +28,19 @@ Constraints:
   1 <= s.length <= 104
   s consists of parentheses only '()[]{}'.
 */
-// approac
+// approach: push close brackets when open brackets are found,
+// check for last open bracket (expected close bracket for it) ony when current bracket is a close bracket != {, [, (
 function isValid(s) {
   // Initialize stack to store the closing brackets expected...
   let stack = [];
   // Traverse each character in input string...
   for (let idx = 0; idx < s.length; idx++) {
       // If open parentheses are present, push it to stack...
-      if (s[idx] == '{') {
+      if (s[idx] === '{') {
           stack.push('}');
-      } else if (s[idx] == '[') {
+      } else if (s[idx] === '[') {
           stack.push(']');
-      } else if (s[idx] == '(') {
+      } else if (s[idx] === '(') {
           stack.push(')');
       }
       if (stack.pop() !== s[idx]) { // If a close bracket is found (s[idx] is a close bracket)), check that it matches the last stored open bracket
